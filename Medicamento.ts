@@ -1,4 +1,4 @@
-class Medicamento {
+export class Medicamento {
     nome:string;
     private quantidade: string
     lote:string
