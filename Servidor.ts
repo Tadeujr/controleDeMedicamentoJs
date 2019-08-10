@@ -1,0 +1,3 @@
+class Servidor extends Usuario{
+    
+}
