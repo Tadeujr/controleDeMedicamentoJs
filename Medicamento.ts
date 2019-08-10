@@ -1,4 +1,4 @@
-export class Medicamento {
+export default class Medicamento { // importa a classe padronizada
     nome:string;
     quantidade: number;
     lote:string;

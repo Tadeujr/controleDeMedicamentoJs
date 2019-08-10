@@ -21,4 +21,4 @@ var Medicamento = /** @class */ (function () {
     };
     return Medicamento;
 }());
-exports.Medicamento = Medicamento;
+exports["default"] = Medicamento;
