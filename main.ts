@@ -1,5 +1,5 @@
-import {Usuario} from "./Usuario"
+import {Medicamento} from "./Medicamento"
 
-let newUser = new Usuario("Tadeu");
+let newUser = new Medicamento("Doril",50,"20/02/20160","123/45");
 
-console.log(newUser.nome);
+console.log(newUser.getName());
