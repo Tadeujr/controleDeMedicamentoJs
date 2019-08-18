@@ -1,12 +1,18 @@
-import {Paciente} from "./Paciente"
-import {Servidor} from "./Servidor"
-import {Medicamento} from "./Medicamento"
-
-class Retirada {
-    dataRetirada:string;
-    horaRetirada:string;
-    paciente:Paciente;
-    servidor:Servidor;
-    medicamento: Medicamento;
+export class Retirada {
+    servidor:string;
+    cartaoPaciente:string;
     
+    constructor(servidor:string,cartaoPaciente:string){
+        this.servidor = servidor;
+        this.cartaoPaciente = cartaoPaciente;
+    }
+
+    public get getServidor():string{
+        return this.servidor;
+    }
+
+    public get getCartaoPaciente():string{
+        return this.cartaoPaciente;
+    }    
+
 }

@@ -1,5 +1,5 @@
 import {Medicamento} from "./Medicamento"
 
-let newUser = new Medicamento("Doril",50,"20/02/20160","123/45");
+let newUser = new Medicamento("Doril","Dipirona Sódica");
 
-console.log(newUser.getName());
+console.log(newUser.getPrincipioAtivo() +"\n" + newUser.getnomeMedicamento());

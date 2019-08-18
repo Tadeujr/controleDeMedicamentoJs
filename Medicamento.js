@@ -1,23 +1,15 @@
 "use strict";
 exports.__esModule = true;
 var Medicamento = /** @class */ (function () {
-    function Medicamento(nome, quantidade, lote, validade) {
-        this.nome = nome;
-        this.quantidade = quantidade;
-        this.lote = lote;
-        this.validade = validade;
+    function Medicamento(nomeMedicamento, principioAtivo) {
+        this.nomeMedicamento = nomeMedicamento;
+        this.principioAtivo = principioAtivo;
     }
-    Medicamento.prototype.getName = function () {
-        return this.nome;
+    Medicamento.prototype.getnomeMedicamento = function () {
+        return this.nomeMedicamento;
     };
-    Medicamento.prototype.getLote = function () {
-        return this.lote;
-    };
-    Medicamento.prototype.getValidade = function () {
-        return this.validade;
-    };
-    Medicamento.prototype.getQuantidade = function () {
-        return this.quantidade;
+    Medicamento.prototype.getPrincipioAtivo = function () {
+        return this.principioAtivo;
     };
     return Medicamento;
 }());
