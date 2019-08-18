@@ -1,33 +1,21 @@
-export default class Medicamento { // importa a classe padronizada
-    nome:string;
-    quantidade: number;
-    lote:string;
-    validade: string;
+export class Medicamento { // importa a classe padronizada
+    protected nomeMedicamento:string;
+    protected principioAtivo:string;
 
-    constructor(nome:string, quantidade:number, lote:string, validade: string){
-        this.nome = nome
-        this.quantidade = quantidade;
-        this.lote = lote;
-        this.validade =  validade;
+    constructor(nomeMedicamento:string, principioAtivo:string){
+        this.nomeMedicamento = nomeMedicamento;
+        this.principioAtivo = principioAtivo;
+
     }
     
-    public getName() : string {
-        return this.nome;
+    
+    
+    public getnomeMedicamento() : string {
+        return this.nomeMedicamento;
     }
-
     
-    public getLote() : string {
-        return this.lote;
-    }
-
-    public getValidade():string{
-        return this.validade;
-    } 
-    
-
-    
-    public getQuantidade():number{
-        return this.quantidade;
+    public getPrincipioAtivo ():string{
+        return this.principioAtivo;
     } 
     
 
