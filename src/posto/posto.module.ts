@@ -1,4 +1,9 @@
 import { Module } from '@nestjs/common';
+import { PostoController } from './posto.controller';
+import { PostoService } from './posto.service';
 
-@Module({})
-export class PostoModule {}
+@Module({
+  controllers: [PostoController],
+  providers: [PostoService]
+})
+export class PostoModule { }
