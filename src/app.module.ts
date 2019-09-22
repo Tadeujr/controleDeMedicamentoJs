@@ -1,12 +1,10 @@
 import { Module } from "@nestjs/common";
 import { AppController } from "./app.controller";
 import { AppService } from "./app.service";
-import { PessoaModule } from "./pessoa/pessoa.module";
-import { MedicamentoModule } from "./medicamento/medicamento.module";
-import { PostoModule } from "./posto/posto.module";
-import { DaoModule } from "./dao/dao.module";
 import { TypeOrmModule } from "@nestjs/typeorm";
 import { UsuarioE } from "./entidades/usuarioE.entity";
+import { PostoController } from "./posto/posto.controller";
+import { PostoService } from "./posto/posto.service";
 
 @Module({
   imports: [
@@ -20,12 +18,9 @@ import { UsuarioE } from "./entidades/usuarioE.entity";
       entities: [__dirname + "/**/*.entity{.ts,.js}"],
       synchronize: true
     }),
-    TypeOrmModule.forFeature([UsuarioE]),
-    PessoaModule,
-    MedicamentoModule,
-    PostoModule
+    TypeOrmModule.forFeature([UsuarioE])
   ],
-  controllers: [AppController],
-  providers: [AppService]
+  controllers: [AppController, PostoController],
+  providers: [AppService, PostoService]
 })
 export class AppModule {}

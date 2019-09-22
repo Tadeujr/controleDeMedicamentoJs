@@ -11,21 +11,41 @@ export class PostoService {
     private readonly usuarioRepository: Repository<UsuarioE>
   ) {}
 
-  async getall(): Promise<UsuarioE[]> {
+  async listarUsuarios(): Promise<UsuarioE[]> {
     return await this.usuarioRepository.find();
   }
 
   async criarUsuario(novoUsuario: Usuario): Promise<UsuarioE> {
-    const nova = new Usuario();
-    nova.nome = novoUsuario.nome;
-    nova.login = novoUsuario.login;
-    nova.email = novoUsuario.email;
-    nova.senha = novoUsuario.senha;
+    const nova = new Usuario(
+      novoUsuario.nome,
+      novoUsuario.login,
+      novoUsuario.email,
+      novoUsuario.senha
+    );
 
     return await this.usuarioRepository.save(nova);
   }
 
-  async deleteMensagem(idUsuario: number): Promise<any> {
+  //tem que receber o parametro a se mudado
+  //Usuario nao vai poder mudar o o nome do login
+  async atualizarUsuario(
+    idUser: number,
+    campo: string,
+    info: string
+  ): Promise<UsuarioE> {
+    const userApdate = await this.usuarioRepository.findOne(idUser);
+    if (campo === "nome") {
+      userApdate.nome = info;
+    } else if (campo === "email") {
+      userApdate.email = info;
+    } else if (campo === "senha") {
+      userApdate.senha = info;
+    }
+
+    return await this.usuarioRepository.save(userApdate);
+  }
+
+  async deleteUsuario(idUsuario: number): Promise<any> {
     return await this.usuarioRepository.delete(idUsuario);
   }
 }

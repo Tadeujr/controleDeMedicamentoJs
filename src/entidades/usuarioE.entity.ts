@@ -1,4 +1,4 @@
-import { Entity, Column, PrimaryGeneratedColumn } from "typeorm";
+import { Entity, Column, PrimaryGeneratedColumn, PrimaryColumn } from "typeorm";
 // tem que modificar essa classe e fazendo ela herdar os metodos da interface DAO que ainda não criei
 @Entity()
 export class UsuarioE {
