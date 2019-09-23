@@ -4,7 +4,8 @@ import { AppService } from "./app.service";
 import { TypeOrmModule } from "@nestjs/typeorm";
 import { UsuarioE } from "./entidades/usuarioE.entity";
 import { PostoController } from "./posto/posto.controller";
-import { PostoService } from "./posto/posto.service";
+import { PostoService } from "./posto.service";
+
 
 @Module({
   imports: [
@@ -23,4 +24,4 @@ import { PostoService } from "./posto/posto.service";
   controllers: [AppController, PostoController],
   providers: [AppService, PostoService]
 })
-export class AppModule {}
+export class AppModule { }

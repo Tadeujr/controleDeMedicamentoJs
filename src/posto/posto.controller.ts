@@ -10,12 +10,14 @@ import {
   Param
 } from "@nestjs/common";
 
-import { PostoService } from "./posto.service";
-import { Usuario } from "src/dao/models/usuario.model";
 
+import { Usuario } from "src/dao/models/usuario.model";
+import { PostoService } from "src/posto.service";
+
+// Lembrar de Mudar o nome no controller senao da zica
 @Controller("posto")
 export class PostoController {
-  constructor(private readonly usuarioService: PostoService) {}
+  constructor(private readonly usuarioService: PostoService) { }
   //Crud Usuario
   @Post()
   criarUsuario(@Body() Usuario, @Res() resposta) {
