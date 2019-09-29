@@ -1,15 +1,17 @@
 import { Injectable, Post } from "@nestjs/common";
-import { UsuarioE } from "src/entidades/usuarioE.entity";
+import { UsuarioE } from "src/entidades/UsuarioE.entity";
 import { InjectRepository } from "@nestjs/typeorm";
 import { Repository } from "typeorm";
-import { Usuario } from "src/dao/models/usuario.model";
+import { Usuario } from "src/models/usuario.model";
+
+
 
 @Injectable()
-export class PostoService {
+export class UsuarioService {
   constructor(
     @InjectRepository(UsuarioE)
     private readonly usuarioRepository: Repository<UsuarioE>
-  ) {}
+  ) { }
 
   async listarUsuarios(): Promise<UsuarioE[]> {
     return await this.usuarioRepository.find();

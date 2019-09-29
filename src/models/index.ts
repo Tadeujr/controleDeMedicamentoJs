@@ -6,7 +6,7 @@ import { Usuario } from "./usuario.model";
 import { RegistroDeRetirada } from "./registor-de-retirada.model";
 import { Retirada } from "./retirada.model";
 import { Servidor } from "./servidor.model";
-import { UnidadeDeSaude } from "./unidade-de-saude.model";
+import { UnidadeSaude } from "./unidade-de-saude.model";
 
 // fazer com as outras
 
@@ -19,5 +19,5 @@ export const models = {
   registrodeReirada: RegistroDeRetirada,
   retirada: Retirada,
   servidor: Servidor,
-  unidadeDeSaude: UnidadeDeSaude
+  unidadeDeSaude: UnidadeSaude
 };

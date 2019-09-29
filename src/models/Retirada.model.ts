@@ -8,11 +8,11 @@ export class BilderRetirada {
     return null;
   }
 
-  buscarPaciente(nome: string): Paciente {
+  buscarPaciente(cartaoSus: string): Paciente {
     return null;
   }
 
-  retirarMedicamento(serv: string, paciente: string): Retirada {
+  retirarMedicamento(servId: string, pacienteId: string): Retirada {
     return null;
   }
 
