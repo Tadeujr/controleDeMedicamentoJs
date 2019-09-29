@@ -18,15 +18,19 @@ export class UsuarioService {
   }
 
   async criarUsuario(novoUsuario: Usuario): Promise<UsuarioE> {
+    //vou setar o tipo de usuario ap criar o cadastrar Gerente ou cadastrarAtendente
     const nova = new Usuario(
       novoUsuario.nome,
       novoUsuario.login,
       novoUsuario.email,
-      novoUsuario.senha
+      novoUsuario.senha,
+      novoUsuario.tipoUsuario
     );
+
 
     return await this.usuarioRepository.save(nova);
   }
+
 
   //tem que receber o parametro a se mudado
   //Usuario nao vai poder mudar o o nome do login
@@ -36,9 +40,7 @@ export class UsuarioService {
     info: string
   ): Promise<UsuarioE> {
     const userApdate = await this.usuarioRepository.findOne(idUser);
-    if (campo === "nome") {
-      userApdate.nome = info;
-    } else if (campo === "email") {
+    if (campo === "email") {
       userApdate.email = info;
     } else if (campo === "senha") {
       userApdate.senha = info;
