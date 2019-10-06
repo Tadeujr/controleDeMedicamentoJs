@@ -9,10 +9,11 @@ import {
   HttpStatus,
   Param
 } from "@nestjs/common";
-
-
-import { Usuario } from "src/models/usuario.model";
 import { UsuarioService } from "src/service/Usuario.service";
+import { Usuario } from "src/models/usuario.model";
+
+
+
 
 
 // Lembrar de Mudar o nome no controller senao da zica
@@ -81,4 +82,5 @@ export class UsuarioController {
           .json({ mensagem: "Erro ao deletar usuarios" });
       });
   }
+
 }

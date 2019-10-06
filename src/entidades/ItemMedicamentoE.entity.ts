@@ -1,6 +1,7 @@
 import { PrimaryGeneratedColumn, ManyToOne, JoinColumn, Entity } from "typeorm";
 import { UnidadeSaudeE } from "./UnidadeSaude.entity";
 
+
 @Entity()
 export class ItemMedicamentoE {
     @PrimaryGeneratedColumn()

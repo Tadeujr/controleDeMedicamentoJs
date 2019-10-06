@@ -1,4 +1,5 @@
-import { Entity, PrimaryGeneratedColumn, Column } from "typeorm";
+import { Entity, PrimaryGeneratedColumn, Column, ManyToOne, JoinColumn } from "typeorm";
+
 
 @Entity()
 export class PessoaE {
@@ -8,7 +9,7 @@ export class PessoaE {
     @Column()
     nome: string;
 
-    @Column()// (0) paciente (1) Funcionario
+    @Column()
     tipoPessoa: number;
 
     @Column()

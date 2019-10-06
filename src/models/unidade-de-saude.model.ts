@@ -1,12 +1,20 @@
-export class UnidadeSaude {
-    protected nomeUnidade: string;
+import e = require("express");
 
-    constructor(nomeUnidade: string) {
-        this.nomeUnidade = nomeUnidade;
+export class UnidadeSaude {
+    protected _nomeUnidade: string;
+    protected _endereco: string;
+
+    constructor(nomeUnidade: string, endereco: string) {
+        this._nomeUnidade = nomeUnidade;
+        this._endereco = endereco;
     }
 
-    public getNomeUnidade(): string {
+    get endereco(): string {
+        return this._endereco;
+    }
 
-        return this.nomeUnidade;
+    get nomeUnidade(): string {
+
+        return this._nomeUnidade;
     }
 }

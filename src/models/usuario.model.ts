@@ -7,8 +7,9 @@ export class Usuario extends Pessoa {
   private _email: string;
   private _tipoUsuario: number;// 1(gerente)/2(atendente)/3(paciente)
 
-  constructor(nome: string, login: string, senha: string, email: string, tipoUsuario: number) {
-    super(nome);
+  constructor(nome: string, login: string, senha: string, email: string, tipoUsuario:
+    number, tipoPessoa: number, cartao: string) {
+    super(nome, tipoPessoa, cartao);
     this._login = login;
     this._senha = senha;
     this._email = email;

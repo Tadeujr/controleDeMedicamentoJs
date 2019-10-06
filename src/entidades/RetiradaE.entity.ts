@@ -1,7 +1,9 @@
 import { DatabaseType, PrimaryGeneratedColumn, Column, Entity, ManyToOne, JoinColumn } from "typeorm";
 import { MedicamentoE } from "./MedicamentoE.entity";
-import { UsuarioE } from "./UsuarioE.entity";
 import { PessoaE } from "./PessoaE.entity";
+import { UsuarioE } from "./UsuarioE.entity";
+
+
 
 @Entity()
 export class RetiradaE {

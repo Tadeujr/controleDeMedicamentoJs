@@ -1,8 +1,12 @@
-import { Injectable, Post } from "@nestjs/common";
-import { UsuarioE } from "src/entidades/UsuarioE.entity";
+import { Injectable } from "@nestjs/common";
 import { InjectRepository } from "@nestjs/typeorm";
+import { UsuarioE } from "src/entidades/UsuarioE.entity";
 import { Repository } from "typeorm";
 import { Usuario } from "src/models/usuario.model";
+import { PessoaE } from "src/entidades/PessoaE.entity";
+import { Pessoa } from "src/models/pessoa.model";
+import { PessoaService } from "./pessoa.service";
+
 
 
 
@@ -11,22 +15,27 @@ export class UsuarioService {
   constructor(
     @InjectRepository(UsuarioE)
     private readonly usuarioRepository: Repository<UsuarioE>
+
   ) { }
 
   async listarUsuarios(): Promise<UsuarioE[]> {
     return await this.usuarioRepository.find();
   }
 
+
   async criarUsuario(novoUsuario: Usuario): Promise<UsuarioE> {
     //vou setar o tipo de usuario ap criar o cadastrar Gerente ou cadastrarAtendente
+
     const nova = new Usuario(
       novoUsuario.nome,
       novoUsuario.login,
       novoUsuario.email,
       novoUsuario.senha,
-      novoUsuario.tipoUsuario
-    );
+      novoUsuario.tipoUsuario,
+      novoUsuario.tipoPessoa,
+      novoUsuario.cartaoSus
 
+    );
 
     return await this.usuarioRepository.save(nova);
   }
